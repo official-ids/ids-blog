@@ -278,7 +278,7 @@ def generate_readme(posts, config):
             image_match = re.search(r'!\[.*?\]\((.*?)\)', body)
             if image_match:
                 img_url = image_match.group(1)
-                posts_section += f'<img src="{img_url}" width="400" align="right" style="margin: 0 0 10px 10px;">\n\n'
+                posts_section += f'<img src="{img_url}" width="150" align="right" style="margin: 0 0 8px 12px; max-width: 100%; height: auto; border-radius: 8px;">\n\n'
 
         # Превью
         if show_preview and preview:
