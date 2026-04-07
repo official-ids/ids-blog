@@ -4,7 +4,7 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2017:57-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2017:59-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
 🎲 [Пост дня →](posts/2026-04-07_что-такое-github.md)
@@ -29,7 +29,7 @@
 
 ### 📌 07.04.2026 | Что такое GitHub — полный гайд для новичков
 
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="150" align="right" style="margin: 0 0 8px 12px; max-width: 100%; height: auto; border-radius: 8px;">
+<img src="https://s10.iimage.su/s/07/th_gOBCB75xmvsCJyTRUoy2JppTMIDBecXzRb69lUSAd.png" width="150" align="right" style="margin: 0 0 8px 12px; max-width: 100%; height: auto; border-radius: 8px;">
 
 > Разбираю GitHub от А до Я: зачем нужен, как работает, почему без него никуда в 2026...
 
