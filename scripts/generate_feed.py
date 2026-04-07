@@ -169,12 +169,12 @@ def generate_readme(posts, config):
 
 """
     
-    # Бейджи статистики
+    # Бейджи статистики (кодируем пробелы для shields.io)
     badges = []
     if features.get('last_updated_badge'):
-        badges.append(f"![Last Updated](https://img.shields.io/badge/Обновлено-{now_str.replace('.', '%20')}-blue)")
+        badges.append(f"![Last Updated](https://img.shields.io/badge/updated-{now_str.replace('.', '-').replace(' ', '%20')}-blue)")
     if features.get('post_count_badge'):
-        badges.append(f"![Posts](https://img.shields.io/badge/Постов-{len(posts)}-green)")
+        badges.append(f"![Posts](https://img.shields.io/badge/posts-{len(posts)}-green)")
     
     if badges:
         header += " | ".join(badges) + "\n\n"
