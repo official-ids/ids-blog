@@ -4,18 +4,28 @@
 
 ---
 
-![Last Updated](https://img.shields.io/badge/Обновлено-07%2004%202026 17:45-blue) | ![Posts](https://img.shields.io/badge/Постов-1-green)
+![Last Updated](https://img.shields.io/badge/Обновлено-07%2004%202026 17:52-blue) | ![Posts](https://img.shields.io/badge/Постов-2-green)
 
 
 🎲 [Случайный пост](posts/2024-04-07_мой-первый-пост.md)
 
 ### 🏷️ Облако тегов
 
-[![обновление 1](https://img.shields.io/badge/обновление-1-0075ca)](обновление) [![проект 1](https://img.shields.io/badge/проект-1-2ea44f)](проект)
+[![проект 2](https://img.shields.io/badge/проект-2-2ea44f)](проект) [![разработка 1](https://img.shields.io/badge/разработка-1-6e40c9)](разработка) [![идеи 1](https://img.shields.io/badge/идеи-1-bf3989)](идеи) [![обновление 1](https://img.shields.io/badge/обновление-1-0075ca)](обновление)
 
 ---
 
 ## 📝 Лента постов
+
+### 📌 07.04.2026 | Автоматизация рутины: GitHub Actions для личного блога
+
+> Рассказываю, как настроил блог, который обновляет сам себя — просто добавляешь .md-файл и пушишь...
+
+![разработка](https://img.shields.io/badge/разработка-6e40c9) ![проект](https://img.shields.io/badge/проект-2ea44f) ![идеи](https://img.shields.io/badge/идеи-bf3989)
+
+🔗 [Читать полностью →](posts/2026-04-07_автоматизация-рутины.md)
+
+---
 
 ### 📌 07.04.2024 | Мой первый пост
 
