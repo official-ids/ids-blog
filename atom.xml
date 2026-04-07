@@ -1,0 +1,335 @@
+<?xml version="1.0" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>🎵 Мой Ритм</title>
+  <subtitle>Личный блог о разработке, музыке и технологиях</subtitle>
+  <link href="https://github.com/your-username/VoiceBot" rel="alternate"/>
+  <link href="https://github.com/your-username/VoiceBot/atom.xml" rel="self"/>
+  <updated>2026-04-07T17:22:19Z</updated>
+  <id>https://github.com/your-username/VoiceBot</id>
+  <author>
+    <name>Your Name</name>
+  </author>
+  <entry>
+    <title>CipherNest — Telegram-бот для криптографии</title>
+    <link href="https://github.com/your-username/VoiceBot/posts/2026-04-07_ciphernest-crypto-bot.md" rel="alternate"/>
+    <id>https://github.com/your-username/VoiceBot/posts/2026-04-07_ciphernest-crypto-bot.md</id>
+    <updated>2026-04-07T00:00:00Z</updated>
+    <published>2026-04-07T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Self-hosted Telegram-бот с 25+ алгоритмами шифрования: AES, RSA, ChaCha20, Argon2id — всё в одном боте...&lt;/p&gt;
+
+# CipherNest — Telegram Crypto Bot 🔐
+
+Self-hosted Telegram-бот для криптографических операций и кодирования данных.
+
+## 🛠️ Стек
+
+- **Python** + **aiogram 3**
+- **cryptography**, **argon2-cffi**
+- **Docker** &amp; **Docker Compose**
+
+## ⚡ Возможности
+
+- **25+ алгоритмов**: AES-256-GCM, ChaCha20, RSA-2048, Ed25519, SHA-2/3, BLAKE2b, Argon2id, JWT decode, ZLIB и другие
+- **Chain Mode** — последовательное преобразование данных через цепочку алгоритмов
+- **Автоопределение формата** входных данных
+
+## 🔒 Приватность
+
+- Stateless обработка только в RAM
+- Нулевое логирование на диск
+- Rate limit: 10 запросов/мин
+
+## 🚀 Деплой
+
+```bash
+docker compose up -d
+```
+
+Optional: Redis для сессий. 44 юнит-теста, MIT License.
+
+🔗 [Репозиторий →](https://github.com/official-ids/CipherNest-Telegram-Crypto-Bot)
+
+---
+
+*Опубликовано: 7 апреля 2026*</content>
+    <category term="проект"/>
+    <category term="разработка"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+  </entry>
+  <entry>
+    <title>HellloFridge_bot — Telegram-бот техподдержки</title>
+    <link href="https://github.com/your-username/VoiceBot/posts/2026-04-07_helllofridge-bot-поддержка.md" rel="alternate"/>
+    <id>https://github.com/your-username/VoiceBot/posts/2026-04-07_helllofridge-bot-поддержка.md</id>
+    <updated>2026-04-07T00:00:00Z</updated>
+    <published>2026-04-07T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Telegram-бот для техподдержки с системой предложений, обратной связью и полным функционалом обслуживания...&lt;/p&gt;
+
+# HellloFridge_bot — Telegram-бот техподдержки 🤖❄️
+
+&gt; *Бот, который решает все вопросы с поддержкой в одном окне Telegram.*
+
+---
+
+## 📌 Что умеет бот?
+
+### 🛠️ Техподдержка
+
+Пользователь пишет → оператор получает → проблема решена.
+
+| Функция | Описание |
+|---------|----------|
+| 💬 **Обращения** | Создаёшь тикет — отвечаем в реальном времени |
+| 📋 **Статус заявки** | Отслеживай прогресс прямо в чате |
+| 🏷️ **Категории** | Проблема, вопрос, баг — сортировка по типу |
+| ⏱️ **Время ответа** | Среднее время реакции — менее 10 минут |
+
+### 💡 Предложения
+
+Не нравится что-то? Есть идея? Пиши напрямую:
+
+```
+/предложить — отправь свою идею
+```
+
+Все предложения собираются и рассматриваются командой.
+
+### 📊 Статистика
+
+![Status](https://img.shields.io/badge/Status-Online-green) ![Tickets](https://img.shields.io/badge/Tickets-Active-blue) ![Response](https://img.shields.io/badge/Response-&lt;10min-yellowgreen)
+
+---
+
+## 🎯 Кнопки и команды
+
+| Команда | Что делает |
+|---------|------------|
+| `/start` | Запуск бота, главное меню |
+| `/help` | Список команд |
+| `/support` | Создать обращение в поддержку |
+| `/suggest` | Отправить предложение |
+| `/status` | Проверить статус заявки |
+| `/faq` | Частые вопросы и ответы |
+
+### Inline-кнопки
+
+```
+┌─────────────────────────┐
+│  📩 Мои обращения       │
+│  💡 Предложение         │
+│  ❓ FAQ                 │
+│  📞 Связаться           │
+└─────────────────────────┘
+```
+
+---
+
+## 🔧 Как это работает
+
+### Для пользователя
+
+1. Открываешь бота → [@HellloFridge_bot](https://t.me/HellloFridge_bot)
+2. Жмёшь **Начать** → выбираешь раздел
+3. Пишешь вопрос → получаешь ответ
+
+### Для оператора
+
+```
+Панель админа:
+├── 📨 Входящие обращения
+├── 📈 Статистика
+├── 👥 Пользователи
+├── 💡 Предложения
+└── ⚙️ Настройки
+```
+
+---
+
+## 💎 Почему это удобно?
+
+![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&amp;logoColor=white) ![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python) ![aiogram](https://img.shields.io/badge/aiogram-3.x-green)
+
+- **Без ожидания** — не надо звонить или писать на почту
+- **Всё в одном месте** — история обращений в Telegram
+- **Быстро** — пара кнопок и текст
+- **Анонимно** — не нужен email или телефон
+
+---
+
+## 📸 Скриншоты
+
+### Главное меню
+
+```
+👋 Привет, [Имя]!
+Я бот техподдержки. Чем могу помочь?
+
+📩 Обращение     💡 Предложение
+❓ FAQ           📊 Статус заявки
+```
+
+### Создание обращения
+
+```
+📝 Новое обращение
+Выберите категорию:
+
+🔧 Техническая проблема
+❓ Общий вопрос
+🐞 Баг/Ошибка
+💬 Другое
+```
+
+---
+
+## 🚀 Планы на будущее
+
+- [x] 🤖 AI-автоответы через Hugging Face
+- [x] 📎 Прикрепление скриншотов и файлов
+- [x] 🌐 Мультиязычность (RU/EN)
+- [x] 📊 Расширенная аналитика для админов
+- [x] ⭐ Система оценок после обращения
+
+---
+
+## 🔗 Попробовать
+
+👉 **[@HellloFridge_bot](https://t.me/HellloFridge_bot)** — пиши прямо сейчас!
+👉 **[Исходный код](https://github.com/official-ids/HellloFridge_bot)** — fork &amp; deploy!
+
+---
+
+*Опубликовано: 7 апреля 2026* | 🏷️ `#telegram` `#бот` `#поддержка` `#проект`</content>
+    <category term="проект"/>
+    <category term="разработка"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+  </entry>
+  <entry>
+    <title>Что такое GitHub — полный гайд для новичков</title>
+    <link href="https://github.com/your-username/VoiceBot/posts/2026-04-07_что-такое-github.md" rel="alternate"/>
+    <id>https://github.com/your-username/VoiceBot/posts/2026-04-07_что-такое-github.md</id>
+    <updated>2026-04-07T00:00:00Z</updated>
+    <published>2026-04-07T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Разбираю GitHub от А до Я: зачем нужен, как работает, почему без него никуда в 2026...&lt;/p&gt;
+
+# Что такое GitHub — полный гайд для новичков 🐙
+
+&gt; *Если ты когда-нибудь слышал «запушь на гитхаб» и не понимал — этот пост для тебя.*
+
+---
+
+## 🤔 Что вообще такое GitHub?
+
+**GitHub** — это платформа для хранения кода и совместной работы. Представь Google Docs, но для программистов.
+
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
+| Фича | Что делает |
+|------|------------|
+| 📦 **Репозитории** | Папки с проектами и историей всех изменений |
+| 🔀 **Ветки** | Параллельные версии кода (чтобы не сломать основное) |
+| 🔃 **Pull Requests** | Предложение изменений с обсуждением |
+| ⚡ **Actions** | Автоматизация: тесты, деплой, боты |
+| 📄 **Pages** | Бесплатный хостинг сайтов прямо из репо |
+
+---
+
+## 🔑 Основные понятия
+
+### Git vs GitHub
+
+```
+Git       = система контроля версий (программа на компе)
+GitHub    = сайт, где хранятся твои Git-репозитории
+```
+
+### Репозиторий
+
+Это твой проект со всей историей:
+
+```
+мой-проект/
+├── src/          ← исходный код
+├── README.md     ← главная страница
+└── .git/         ← магия Git тут
+```
+
+### Коммиты
+
+Каждый коммит — это «сейв» в игре:
+
+![GitHub Chart](https://ghchart.rshah.org/1b65c9/official-ids)
+
+---
+
+## 🚀 Как начать за 5 минут
+
+### Шаг 1: Регистрация
+
+🔗 [github.com](https://github.com) → Sign Up → бесплатно
+
+### Шаг 2: Первый репозиторий
+
+```
+New → Create Repository → Public → Create
+```
+
+### Шаг 3: Первый коммит
+
+```bash
+git clone https://github.com/ТВОЙ_НИК/мой-репо.git
+cd мой-репо
+echo "# Привет мир!" &gt; README.md
+git add .
+git commit -m "🎉 Первый коммит"
+git push
+```
+
+---
+
+## 💡 Зачем это НУЖНО?
+
+![Repos](https://img.shields.io/badge/Repos-10+-blue) ![Stars](https://img.shields.io/badge/Stars-100+-yellow) ![Contributions](https://img.shields.io/badge/Contributions-500+-green)
+
+1. **Портфолио** — работодатель смотрит на твой GitHub
+2. **Open Source** — тысячи бесплатных библиотек
+3. **Коллаборация** — работай с кем угодно, откуда угодно
+4. **Бэкап** — код в безопасности в облаке
+5. **CI/CD** — автоматические тесты и деплой
+
+---
+
+## 📚 Полезные ресурсы
+
+| Ресурс | Ссылка |
+|--------|--------|
+| 🎓 Git Tutorial | [git-scm.com/docs](https://git-scm.com/docs) |
+| 📖 GitHub Learning | [skills.github.com](https://skills.github.com) |
+| 🎥 Видео-гайд | [YouTube: Git для начинающих](https://www.youtube.com/watch?v=8JJ101D3knE) |
+| 📊 GitHub Stats | [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) |
+
+---
+
+## 🎯 Итог
+
+GitHub — это **must-have** скилл в 2026. Не важно, ты джун или сеньор — без гита никуда.
+
+&gt; *Лучший способ научиться — начать. Создай первый репо прямо сейчас.*
+
+```bash
+git init &amp;&amp; git commit &amp;&amp; git push  # Жизнь началась 🎉
+```
+
+---
+
+*Опубликовано: 7 апреля 2026* | 🏷️ `#github` `#git` `#для-новичков`</content>
+    <category term="разработка"/>
+    <category term="идеи"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+  </entry>
+</feed>

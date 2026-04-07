@@ -16,63 +16,67 @@ permissions:
 jobs:
   update-feed:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: 📥 Checkout репозитория
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Полная история для корректной работы
-      
+          fetch-depth: 1
+
       - name: 🐍 Настройка Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: 📦 Установка зависимостей
         run: |
           python -m pip install --upgrade pip
-          # Если понадобятся дополнительные библиотеки:
-          # pip install python-frontmatter
-      
-      - name: 🛠️ Проверка структуры
+          pip install -r scripts/requirements.txt
+
+      - name: 🔍 Линтер постов
+        run: |
+          python scripts/lint_posts.py
+
+      - name: 📦 Проверка структуры
         run: |
           echo "📂 Проверка папки posts..."
           if [ ! -d "posts" ]; then
             echo "❌ Папка posts не найдена!"
             exit 1
           fi
-          
+
           echo "📄 Проверка конфигов..."
           if [ ! -f "config.json" ]; then
             echo "❌ Файл config.json не найден!"
             exit 1
           fi
-          
+
           echo "📜 Проверка скрипта..."
           if [ ! -f "scripts/generate_feed.py" ]; then
             echo "❌ Скрипт generate_feed.py не найден!"
             exit 1
           fi
-          
+
           echo "✅ Все файлы на месте"
-      
+
       - name: 🚀 Генерация ленты
         run: |
           echo "🎯 Запуск генератора..."
           python scripts/generate_feed.py
-          
+
           echo "📊 Результат:"
           echo "- posts: $(ls -1 posts/*.md 2>/dev/null | wc -l)"
           echo "- feed.json: $(test -f feed.json && echo '✅' || echo '❌')"
           echo "- README.md: $(test -f README.md && echo '✅' || echo '❌')"
-      
+          echo "- atom.xml: $(test -f atom.xml && echo '✅' || echo '❌')"
+
       - name: 💾 Коммит изменений
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          git add feed.json README.md
-          
+
+          git add feed.json README.md atom.xml
+
           if git diff --staged --quiet; then
             echo "ℹ️  Нет изменений для коммита"
           else
@@ -80,7 +84,7 @@ jobs:
             git push
             echo "✅ Запушены обновления"
           fi
-      
+
       - name: 📝 Лог постов
         if: always()
         run: |

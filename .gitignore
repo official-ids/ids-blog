@@ -19,4 +19,6 @@ Thumbs.db
 # Temp
 *.tmp
 *.log
-"HellloFridge_bot/"  
+
+# Bot (exclude from repo)
+HellloFridge_bot/  
