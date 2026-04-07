@@ -4,10 +4,10 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2018:13-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2018:14-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
-🎲 [Случайный пост](posts/2026-04-07_markdown-красивая-документация.md)
+🎲 [Случайный пост](posts/2026-04-07_что-такое-github.md)
 
 ### 🏷️ Облако тегов
 
