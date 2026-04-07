@@ -4,10 +4,10 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2021:41-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2017:41-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
-🎲 [Пост дня →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
+🎲 [Пост дня →](posts/2026-04-07_что-такое-github.md)
 
 ### 🏷️ Облако тегов
 
@@ -27,16 +27,6 @@
 
 ---
 
-### 📌 07.04.2026 | Есть вопрос или предложение? Напиши нам!
-
-> Теперь со мной можно связаться напрямую через Telegram-бота. Вопросы, предложения, идеи — пишите, всё дойдёт лично мне...
-
-![обновление](https://img.shields.io/badge/обновление-0075ca) ![идеи](https://img.shields.io/badge/идеи-bf3989)
-
-🔗 [Читать полностью →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
-
----
-
 ### 📌 07.04.2026 | Что такое GitHub — полный гайд для новичков
 
 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="400" align="right" style="margin: 0 0 10px 10px;">
@@ -46,6 +36,16 @@
 ![разработка](https://img.shields.io/badge/разработка-6e40c9) ![идеи](https://img.shields.io/badge/идеи-bf3989)
 
 🔗 [Читать полностью →](posts/2026-04-07_что-такое-github.md)
+
+---
+
+### 📌 07.04.2026 | Есть вопрос или предложение? Напиши нам!
+
+> Теперь со мной можно связаться напрямую через Telegram-бота. Вопросы, предложения, идеи — пишите, всё дойдёт лично мне...
+
+![обновление](https://img.shields.io/badge/обновление-0075ca) ![идеи](https://img.shields.io/badge/идеи-bf3989)
+
+🔗 [Читать полностью →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
 
 ---
 
