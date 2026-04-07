@@ -4,14 +4,14 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2018:18-blue) | ![Posts](https://img.shields.io/badge/Posts-2-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2018:21-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
-🎲 [Случайный пост](posts/2026-04-07_что-такое-github.md)
+🎲 [Случайный пост](posts/2026-04-07_helllofridge-bot-поддержка.md)
 
 ### 🏷️ Облако тегов
 
-[![разработка 2](https://img.shields.io/badge/разработка-2-6e40c9)](разработка) [![проект 1](https://img.shields.io/badge/проект-1-2ea44f)](проект) [![идеи 1](https://img.shields.io/badge/идеи-1-bf3989)](идеи)
+[![разработка 3](https://img.shields.io/badge/разработка-3-6e40c9)](разработка) [![проект 2](https://img.shields.io/badge/проект-2-2ea44f)](проект) [![идеи 1](https://img.shields.io/badge/идеи-1-bf3989)](идеи)
 
 ---
 
@@ -24,6 +24,16 @@
 ![проект](https://img.shields.io/badge/проект-2ea44f) ![разработка](https://img.shields.io/badge/разработка-6e40c9)
 
 🔗 [Читать полностью →](posts/2026-04-07_ciphernest-crypto-bot.md)
+
+---
+
+### 📌 07.04.2026 | HellloFridge_bot — Telegram-бот техподдержки
+
+> Telegram-бот для техподдержки с системой предложений, обратной связью и полным функционалом обслуживания...
+
+![проект](https://img.shields.io/badge/проект-2ea44f) ![разработка](https://img.shields.io/badge/разработка-6e40c9)
+
+🔗 [Читать полностью →](posts/2026-04-07_helllofridge-bot-поддержка.md)
 
 ---
 
