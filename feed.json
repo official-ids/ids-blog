@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-04-07T18:14:48.327320",
+  "generated": "2026-04-07T18:18:37.454705",
   "posts": [
     {
       "title": "CipherNest — Telegram-бот для криптографии",
@@ -12,17 +12,6 @@
       "preview": "Self-hosted Telegram-бот с 25+ алгоритмами шифрования: AES, RSA, ChaCha20, Argon2id — всё в одном боте...",
       "filename": "2026-04-07_ciphernest-crypto-bot.md",
       "filepath": "posts/2026-04-07_ciphernest-crypto-bot.md"
-    },
-    {
-      "title": "Markdown — язык красивой документации",
-      "date": "2026-04-07",
-      "tags": [
-        "разработка",
-        "идеи"
-      ],
-      "preview": "Всё о Markdown: от базового синтаксиса до продвинутых трюков с бейджами, таблицами и embed-контентом...",
-      "filename": "2026-04-07_markdown-красивая-документация.md",
-      "filepath": "posts/2026-04-07_markdown-красивая-документация.md"
     },
     {
       "title": "Что такое GitHub — полный гайд для новичков",
