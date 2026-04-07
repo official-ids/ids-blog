@@ -4,10 +4,10 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2021:30-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2021:34-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
-🎲 [Пост дня →](posts/2026-04-07_helllofridge-bot-поддержка.md)
+🎲 [Пост дня →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
 
 ### 🏷️ Облако тегов
 
@@ -27,15 +27,13 @@
 
 ---
 
-### 📌 07.04.2026 | HellloFridge_bot — Telegram-бот техподдержки
+### 📌 07.04.2026 | HellloFridge_bot — минималистичный бот обратной связи
 
-<img src="https://img.shields.io/badge/Status-Online-green" width="400" align="right" style="margin: 0 0 10px 10px;">
-
-> Telegram-бот для техподдержки с системой предложений, обратной связью и полным функционалом обслуживания...
+> Простой Telegram-бот: пользователь пишет — админ получает сообщение и отвечает. Максимальная простота — ничего лишнего...
 
 ![проект](https://img.shields.io/badge/проект-2ea44f) ![разработка](https://img.shields.io/badge/разработка-6e40c9)
 
-🔗 [Читать полностью →](posts/2026-04-07_helllofridge-bot-поддержка.md)
+🔗 [Читать полностью →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
 
 ---
 

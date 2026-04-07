@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-04-07T21:30:16.503443",
+  "generated": "2026-04-07T21:34:05.750293",
   "posts_count": 3,
   "posts": [
     {
@@ -15,15 +15,15 @@
       "filepath": "posts/2026-04-07_ciphernest-crypto-bot.md"
     },
     {
-      "title": "HellloFridge_bot — Telegram-бот техподдержки",
+      "title": "HellloFridge_bot — минималистичный бот обратной связи",
       "date": "2026-04-07",
       "tags": [
         "проект",
         "разработка"
       ],
-      "preview": "Telegram-бот для техподдержки с системой предложений, обратной связью и полным функционалом обслуживания...",
-      "filename": "2026-04-07_helllofridge-bot-поддержка.md",
-      "filepath": "posts/2026-04-07_helllofridge-bot-поддержка.md"
+      "preview": "Простой Telegram-бот: пользователь пишет — админ получает сообщение и отвечает. Максимальная простота — ничего лишнего...",
+      "filename": "2026-04-07_helllofridge-bot-обратная-связь.md",
+      "filepath": "posts/2026-04-07_helllofridge-bot-обратная-связь.md"
     },
     {
       "title": "Что такое GitHub — полный гайд для новичков",
