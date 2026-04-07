@@ -1,8 +1,8 @@
 {
   "blog": {
-    "title": "🎵 Мой Ритм",
+    "title": "IDs-blog",
     "description": "Личный блог о разработке, музыке и технологиях",
-    "author": "Your Name",
+    "author": "@seraviellex",
     "timezone": "Europe/Moscow",
     "posts_per_page": 10,
     "show_tags": true,
