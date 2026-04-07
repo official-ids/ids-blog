@@ -4,10 +4,10 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2018:08-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2014:09-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
-🎲 [Случайный пост](posts/2026-04-07_что-такое-github.md)
+🎲 [Случайный пост](posts/2026-04-07_ciphernest-crypto-bot.md)
 
 ### 🏷️ Облако тегов
 
@@ -27,16 +27,6 @@
 
 ---
 
-### 📌 07.04.2026 | Markdown — язык красивой документации
-
-> Всё о Markdown: от базового синтаксиса до продвинутых трюков с бейджами, таблицами и embed-контентом...
-
-![разработка](https://img.shields.io/badge/разработка-6e40c9) ![идеи](https://img.shields.io/badge/идеи-bf3989)
-
-🔗 [Читать полностью →](posts/2026-04-07_markdown-красивая-документация.md)
-
----
-
 ### 📌 07.04.2026 | Что такое GitHub — полный гайд для новичков
 
 > Разбираю GitHub от А до Я: зачем нужен, как работает, почему без него никуда в 2026...
@@ -44,6 +34,16 @@
 ![разработка](https://img.shields.io/badge/разработка-6e40c9) ![идеи](https://img.shields.io/badge/идеи-bf3989)
 
 🔗 [Читать полностью →](posts/2026-04-07_что-такое-github.md)
+
+---
+
+### 📌 07.04.2026 | Markdown — язык красивой документации
+
+> Всё о Markdown: от базового синтаксиса до продвинутых трюков с бейджами, таблицами и embed-контентом...
+
+![разработка](https://img.shields.io/badge/разработка-6e40c9) ![идеи](https://img.shields.io/badge/идеи-bf3989)
+
+🔗 [Читать полностью →](posts/2026-04-07_markdown-красивая-документация.md)
 
 ---
 
