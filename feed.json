@@ -1,7 +1,18 @@
 {
   "version": "1.0",
-  "generated": "2026-04-07T17:57:00.967551",
+  "generated": "2026-04-07T18:01:22.824465",
   "posts": [
+    {
+      "title": "CipherNest — Telegram-бот для криптографии",
+      "date": "2026-04-07",
+      "tags": [
+        "проект",
+        "разработка"
+      ],
+      "preview": "Self-hosted Telegram-бот с 25+ алгоритмами шифрования: AES, RSA, ChaCha20, Argon2id — всё в одном боте...",
+      "filename": "2026-04-07_ciphernest-crypto-bot.md",
+      "filepath": "posts/2026-04-07_ciphernest-crypto-bot.md"
+    },
     {
       "title": "Автоматизация рутины: GitHub Actions для личного блога",
       "date": "2026-04-07",

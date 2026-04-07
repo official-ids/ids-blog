@@ -4,18 +4,28 @@
 
 ---
 
-![Last Updated](https://img.shields.io/badge/updated-07-04-2026%2017:57-blue) | ![Posts](https://img.shields.io/badge/posts-2-green)
+![Last Updated](https://img.shields.io/badge/updated-07-04-2026%2018:01-blue) | ![Posts](https://img.shields.io/badge/posts-3-green)
 
 
 🎲 [Случайный пост](posts/2026-04-07_автоматизация-рутины.md)
 
 ### 🏷️ Облако тегов
 
-[![проект 2](https://img.shields.io/badge/проект-2-2ea44f)](проект) [![разработка 1](https://img.shields.io/badge/разработка-1-6e40c9)](разработка) [![идеи 1](https://img.shields.io/badge/идеи-1-bf3989)](идеи) [![обновление 1](https://img.shields.io/badge/обновление-1-0075ca)](обновление)
+[![проект 3](https://img.shields.io/badge/проект-3-2ea44f)](проект) [![разработка 2](https://img.shields.io/badge/разработка-2-6e40c9)](разработка) [![идеи 1](https://img.shields.io/badge/идеи-1-bf3989)](идеи) [![обновление 1](https://img.shields.io/badge/обновление-1-0075ca)](обновление)
 
 ---
 
 ## 📝 Лента постов
+
+### 📌 07.04.2026 | CipherNest — Telegram-бот для криптографии
+
+> Self-hosted Telegram-бот с 25+ алгоритмами шифрования: AES, RSA, ChaCha20, Argon2id — всё в одном боте...
+
+![проект](https://img.shields.io/badge/проект-2ea44f) ![разработка](https://img.shields.io/badge/разработка-6e40c9)
+
+🔗 [Читать полностью →](posts/2026-04-07_ciphernest-crypto-bot.md)
+
+---
 
 ### 📌 07.04.2026 | Автоматизация рутины: GitHub Actions для личного блога
 
