@@ -4,14 +4,14 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2017:37-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2021:41-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
-🎲 [Пост дня →](posts/2026-04-07_что-такое-github.md)
+🎲 [Пост дня →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
 
 ### 🏷️ Облако тегов
 
-[![разработка 3](https://img.shields.io/badge/разработка%203-6e40c9)](разработка) [![проект 2](https://img.shields.io/badge/проект%202-2ea44f)](проект) [![идеи 1](https://img.shields.io/badge/идеи%201-bf3989)](идеи)
+[![разработка 2](https://img.shields.io/badge/разработка%202-6e40c9)](разработка) [![идеи 2](https://img.shields.io/badge/идеи%202-bf3989)](идеи) [![проект 1](https://img.shields.io/badge/проект%201-2ea44f)](проект) [![обновление 1](https://img.shields.io/badge/обновление%201-0075ca)](обновление)
 
 ---
 
@@ -27,6 +27,16 @@
 
 ---
 
+### 📌 07.04.2026 | Есть вопрос или предложение? Напиши нам!
+
+> Теперь со мной можно связаться напрямую через Telegram-бота. Вопросы, предложения, идеи — пишите, всё дойдёт лично мне...
+
+![обновление](https://img.shields.io/badge/обновление-0075ca) ![идеи](https://img.shields.io/badge/идеи-bf3989)
+
+🔗 [Читать полностью →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
+
+---
+
 ### 📌 07.04.2026 | Что такое GitHub — полный гайд для новичков
 
 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="400" align="right" style="margin: 0 0 10px 10px;">
@@ -36,16 +46,6 @@
 ![разработка](https://img.shields.io/badge/разработка-6e40c9) ![идеи](https://img.shields.io/badge/идеи-bf3989)
 
 🔗 [Читать полностью →](posts/2026-04-07_что-такое-github.md)
-
----
-
-### 📌 07.04.2026 | HellloFridge_bot — минималистичный бот обратной связи
-
-> Простой Telegram-бот: пользователь пишет — админ получает сообщение и отвечает. Максимальная простота — ничего лишнего...
-
-![проект](https://img.shields.io/badge/проект-2ea44f) ![разработка](https://img.shields.io/badge/разработка-6e40c9)
-
-🔗 [Читать полностью →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
 
 ---
 
