@@ -4,10 +4,10 @@
 
 ---
 
-![Last Updated](https://img.shields.io/badge/updated-07-04-2026%2018:01-blue) | ![Posts](https://img.shields.io/badge/posts-3-green)
+![Updated](https://img.shields.io/badge/Updated-07.04.2026%2018:03-blue) | ![Posts](https://img.shields.io/badge/Posts-3-green)
 
 
-🎲 [Случайный пост](posts/2026-04-07_автоматизация-рутины.md)
+🎲 [Случайный пост](posts/2024-04-07_мой-первый-пост.md)
 
 ### 🏷️ Облако тегов
 
