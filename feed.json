@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-04-07T18:34:04.979753",
+  "generated": "2026-04-07T14:36:45.990838",
   "posts": [
     {
       "title": "CipherNest — Telegram-бот для криптографии",
@@ -14,17 +14,6 @@
       "filepath": "posts/2026-04-07_ciphernest-crypto-bot.md"
     },
     {
-      "title": "HellloFridge_bot — Telegram-бот техподдержки",
-      "date": "2026-04-07",
-      "tags": [
-        "проект",
-        "разработка"
-      ],
-      "preview": "Telegram-бот для техподдержки с системой предложений, обратной связью и полным функционалом обслуживания...",
-      "filename": "2026-04-07_helllofridge-bot-поддержка.md",
-      "filepath": "posts/2026-04-07_helllofridge-bot-поддержка.md"
-    },
-    {
       "title": "Что такое GitHub — полный гайд для новичков",
       "date": "2026-04-07",
       "tags": [
@@ -34,6 +23,17 @@
       "preview": "Разбираю GitHub от А до Я: зачем нужен, как работает, почему без него никуда в 2026...",
       "filename": "2026-04-07_что-такое-github.md",
       "filepath": "posts/2026-04-07_что-такое-github.md"
+    },
+    {
+      "title": "HellloFridge_bot — Telegram-бот техподдержки",
+      "date": "2026-04-07",
+      "tags": [
+        "проект",
+        "разработка"
+      ],
+      "preview": "Telegram-бот для техподдержки с системой предложений, обратной связью и полным функционалом обслуживания...",
+      "filename": "2026-04-07_helllofridge-bot-поддержка.md",
+      "filepath": "posts/2026-04-07_helllofridge-bot-поддержка.md"
     }
   ]
 }
