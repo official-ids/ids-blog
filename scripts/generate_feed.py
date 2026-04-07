@@ -299,7 +299,7 @@ def generate_readme(posts, config):
     # Футер
     footer = f"""---
 
-💬 *Автор: {author}* | 🔄 *Лента обновляется автоматически через GitHub Actions*
+💬 *Автор: {author}* | 📱 [Telegram]({blog_config.get('telegram', 'https://t.me/seraviellex')}) | 🔄 *Лента обновляется автоматически через GitHub Actions*
 
 """
 

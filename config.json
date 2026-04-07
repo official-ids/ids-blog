@@ -1,9 +1,10 @@
 {
   "blog": {
     "title": "IDs-blog",
-    "description": "Личный блог о разработке, музыке и технологиях",
+    "description": "Личный блог о разработке, и технологиях",
     "author": "@seraviellex",
     "timezone": "Europe/Moscow",
+    "telegram": "https://t.me/seraviellex",
     "posts_per_page": 10,
     "show_tags": true,
     "show_preview": true,
