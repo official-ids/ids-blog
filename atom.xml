@@ -1,0 +1,670 @@
+<?xml version="1.0" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>IDs-blog</title>
+  <subtitle>Личный блог о разработке, и технологиях</subtitle>
+  <link href="https://github.com/official-ids/ids-blog" rel="alternate"/>
+  <link href="https://github.com/official-ids/ids-blog/atom.xml" rel="self"/>
+  <updated>2026-04-08T12:44:34Z</updated>
+  <id>https://github.com/official-ids/ids-blog</id>
+  <author>
+    <name>@seraviellex</name>
+  </author>
+  <entry>
+    <title>Roblox — полный гайд для начинающих и не только</title>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-08_roblox-полный-гайд.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-08_roblox-полный-гайд.md</id>
+    <updated>2026-04-08T00:00:00Z</updated>
+    <published>2026-04-08T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Полный гайд по Roblox: от создания аккаунта до разработки собственных игр на Lua. Разбираю Roblox Studio, скриптинг, монетизацию и комьюнити...&lt;/p&gt;
+
+# Roblox — полный гайд для начинающих и не только 🎮
+
+&gt; *Roblox — это не просто игра. Это платформа, на которой миллионы людей создают, играют и зарабатывают. Разбираю всё от А до Я.*
+
+![Roblox](https://s.fotora.ru/15cc8ba885b28146.png)
+
+---
+
+## 🤔 Что такое Roblox?
+
+**Roblox** — это онлайн-платформа и система создания игр, разработанная компанией Roblox Corporation. Платформа позволяет пользователям создавать свои собственные игры и играть в игры, созданные другими пользователями.
+
+| Факт | Значение |
+|------|----------|
+| 📅 Год запуска | 2006 |
+| 👥 Активных пользователей | 70+ миллионов в месяц |
+| 🎮 Количество игр | 40+ миллионов |
+| 💰 Валюта | Robux (R$) |
+| 💻 Язык скриптинга | Luau (диалект Lua) |
+
+---
+
+## 🚀 Начало работы
+
+### Шаг 1: Создание аккаунта
+
+Перейди на [roblox.com](https://www.roblox.com) и зарегистрируйся. Это бесплатно.
+
+### Шаг 2: Установка Roblox Player
+
+После регистрации скачай Roblox Player — это клиент для запуска игр.
+
+### Шаг 3: Установка Roblox Studio
+
+Для создания игр нужен **Roblox Studio** — бесплатный инструмент разработки.
+
+```
+roblox.com/create → Download Studio
+```
+
+---
+
+## 🛠️ Roblox Studio — обзор
+
+Roblox Studio — это полноценная среда разработки игр. Вот что ты можешь делать:
+
+### Интерфейс
+
+| Панель | Описание |
+|--------|----------|
+| 🏗️ **Explorer** | Дерево объектов игры (Workspace, Lighting, Players и т.д.) |
+| 📝 **Properties** | Свойства выбранного объекта |
+| 🎨 **Toolbox** | Библиотека готовых моделей, скриптов, плагинов |
+| 📐 **Terrain Editor** | Редактор ландшафта |
+| 🔧 **Output** | Консоль для отладки скриптов |
+
+### Основные объекты
+
+```
+Workspace
+├── Baseplate          ← Земля/пол
+├── Parts              ← 3D-объекты (блоки, сферы и т.д.)
+├── Models             ← Готовые модели
+└── Scripts            ← Lua-скрипты
+
+ServerScriptService    ← Серверные скрипты
+ReplicatedStorage      ← Общие ресурсы (клиент + сервер)
+StarterPlayer          ← Стартовые скрипты игрока
+StarterGui             ← Стартовый интерфейс
+```
+
+---
+
+## 💻 Скриптинг на Luau
+
+Luau — это диалект Lua, оптимизированный для Roblox. Разберём основы.
+
+### Hello World
+
+```lua
+print("Hello, Roblox!")
+```
+
+### Создание частицы
+
+```lua
+local part = Instance.new("Part")
+part.Parent = workspace
+part.Size = Vector3.new(4, 1, 4)
+part.Position = Vector3.new(0, 5, 0)
+part.BrickColor = BrickColor.new("Bright blue")
+part.Anchored = true
+```
+
+### Обработка событий
+
+```lua
+local part = workspace.Part
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character:FindFirstChild("Humanoid")
+    
+    if humanoid then
+        print(character.Name .. " коснулся детали!")
+    end
+end)
+```
+
+### Сервер vs Клиент
+
+В Roblox важно понимать разницу:
+
+```lua
+-- Server Script (ServerScriptService)
+-- Выполняется ТОЛЬКО на сервере
+-- Безопасно для логики игры
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RemoteEvent = ReplicatedStorage:WaitForChild("MyEvent")
+
+RemoteEvent.OnServerEvent:Connect(function(player, data)
+    print(player.Name .. " отправил: " .. tostring(data))
+end)
+```
+
+```lua
+-- Local Script (StarterPlayerScripts)
+-- Выполняется ТОЛЬКО у конкретного игрока
+-- Для UI, ввода, эффектов
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RemoteEvent = ReplicatedStorage:WaitForChild("MyEvent")
+
+RemoteEvent:FireServer("Привет сервер!")
+```
+
+---
+
+## 🎨 Создание первой игры
+
+### Obby (полоса препятствий)
+
+Самый популярный тип игр для начинающих:
+
+1. Создай **Baseplate**
+2. Добавь **Parts** как платформы
+3. Установи **Anchored = true** для каждой
+4. Добавь **SpawnLocation** — точка возрождения
+5. Добавь **Kill bricks** (детали, которые убивают):
+
+```lua
+-- Локальный скрипт в детали
+script.Parent.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.Health = 0
+    end
+end)
+```
+
+### Tycoon
+
+Игры-тайкуны — ещё один популярный жанр:
+
+- Игрок собирает деньги
+- Покупает улучшения
+- Автоматизирует производство
+
+Основные компоненты:
+- **Dropper** — генерирует деньги
+- **Conveyor** — транспортирует объекты
+- **Upgrader** — улучшает дропперы
+- **Leaderstats** — отображает статистику
+
+---
+
+## 💰 Монетизация
+
+### Robux
+
+**Robux (R$)** — внутриигровая валюта Roblox.
+
+| Пакет | Цена (USD) | Robux |
+|-------|-----------|-------|
+| 400 R$ | $4.99 | 400 |
+| 800 R$ | $9.99 | 800 |
+| 1,700 R$ | $19.99 | 1,700 |
+| 4,500 R$ | $49.99 | 4,500 |
+| 10,000 R$ | $99.99 | 10,000 |
+
+### Способы заработка
+
+| Метод | Описание | Потенциал |
+|-------|----------|-----------|
+| 🎮 **Game Passes** | Продажа привилегий в игре | ⭐⭐⭐⭐⭐ |
+| 👕 **Clothing** | Продажа одежды и аксессуаров | ⭐⭐⭐⭐ |
+|  **Developer Products** | Расходуемые товары в игре | ⭐⭐⭐⭐⭐ |
+| 💎 **Premium Payouts** | Доход от Premium-подписчиков | ⭐⭐⭐ |
+| 📊 **Engagement Payouts** | Доход за время в игре | ⭐⭐ |
+
+### DevEx (Developer Exchange)
+
+Вывод заработанных Robux в реальные деньги:
+
+- Минимум: 30,000 R$ (~$105)
+- Курс: ~$0.0035 за 1 R$
+- Требуется: верифицированный аккаунт, 13+ лет
+
+---
+
+## 📚 Полезные ресурсы
+
+| Ресурс | Описание |
+|--------|----------|
+| 📖 [Roblox Creator Documentation](https://create.roblox.com/docs) | Официальная документация |
+| 🎓 [Roblox Creator Hub](https://create.roblox.com) | Обучение и туториалы |
+| 💬 [Roblox Developer Forum](https://devforum.roblox.com) | Форум разработчиков |
+| 🎥 [TheAmazeman (YouTube)](https://youtube.com/@TheAmazeman) | Туториалы для начинающих |
+| 🎥 [AlvinBlox (YouTube)](https://youtube.com/@AlvinBlox) | Скриптинг и геймдизайн |
+| 🔧 [Roblox Studio API](https://create.roblox.com/docs/reference/engine) | Справочник по API |
+
+---
+
+## 🏆 Топ игр Roblox
+
+| Игра | Посещений | Жанр |
+|------|-----------|------|
+| Brookhaven 🏡 | 30+ миллиардов | RP |
+| Adopt Me! 🐾 | 30+ миллиардов | Симулятор |
+| Blox Fruits ⚔️ | 25+ миллиардов | Приключения |
+| Tower of Hell 🗼 | 20+ миллиардов | Obby |
+| Murder Mystery 2 🔪 | 5+ миллиардов | Хоррор |
+
+---
+
+## 🎯 Советы для начинающих
+
+### 1. Начни с малого
+
+Не пытайся сразу создать MMORPG. Начни с простого obby или tycoon.
+
+### 2. Изучи Lua
+
+Lua — простой язык. Основи можно выучить за неделю.
+
+```lua
+-- Переменные
+local имя = "Roblox"
+local возраст = 18
+local isActive = true
+
+-- Функции
+local function приветствие(имя)
+    print("Привет, " .. имя .. "!")
+end
+
+приветствие("Мир")
+```
+
+### 3. Используй Toolbox
+
+В Roblox Studio есть встроенный **Toolbox** с тысячами бесплатных моделей, скриптов и плагинов.
+
+### 4. Присоединись к сообществу
+
+- Discord-серверы разработчиков
+- DevForum
+- YouTube-туториалы
+
+### 5. Публикуй и получай фидбек
+
+Не бойся публиковать незаконченные игры. Фидбек от игроков — лучший способ улучшить проект.
+
+---
+
+## 🔮 Будущее Roblox
+
+Roblox активно развивается:
+
+- 🤖 **AI-инструменты** для создания контента
+- 🌐 **Расширенная мультиплеерная поддержка**
+- 📱 **Улучшенная мобильная версия**
+- 🎨 **Более реалистичная графика** (PBR материалы)
+- 💼 **Бизнес-интеграции** (Nike, Gucci, Walmart уже внутри)
+
+---
+
+## 🎯 Итог
+
+Roblox — это больше чем игра. Это:
+
+- 🎮 Платформа для творчества
+- 💰 Источник дохода для разработчиков
+- 🌍 Социальная сеть для миллионов людей
+- 📚 Инструмент обучения программированию
+
+&gt; *Лучший способ научиться — начать. Открой Roblox Studio и создай свою первую игру прямо сейчас.*
+
+---
+
+*Опубликовано: 8 апреля 2026* | 🏷️ `#roblox` `#разработка` `#гайд`</content>
+    <category term="roblox"/>
+    <category term="разработка"/>
+    <category term="идеи"/>
+    <author>
+      <name>@seraviellex</name>
+    </author>
+  </entry>
+  <entry>
+    <title>Размеры обложки и файлов на Boosty — шпаргалка</title>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_boosty-размеры-шпаргалка.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_boosty-размеры-шпаргалка.md</id>
+    <updated>2026-04-07T00:00:00Z</updated>
+    <published>2026-04-07T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Размеры обложек, аватаров, тизеров и лимиты файлов на Boosty — чтобы всё выглядело ровно и ничего не обрезалось...&lt;/p&gt;
+
+# Размеры обложки и не только на Boosty 📐
+
+&gt; Себе для удобства и вам в помощь 💖
+
+![Boosty Cover](https://s10.iimage.su/s/07/th_gTARxepxsiUnHYkzM2hh1cZUtK7fqM3DPRBAmfzTI.png)
+
+---
+
+## 🖼️ Размеры изображений
+
+| Элемент | Размер | Формат | Лимит |
+|---------|--------|--------|-------|
+| 🎨 **Обложка страницы** | `1920 × 240` | — | — |
+| 👤 **Аватар профиля** | `225 × 280` | PNG, JPG | до 10 Mb |
+| 📰 **Тизер поста** | `575 × 625` | PNG, JPG | до 40 Mb |
+| 💎 **Картинка уровня подписки** | `240 × 150` | — | — |
+| 🖼️ **Картинка внутри поста** | любой | — | до 40 Mb |
+
+---
+
+## 🎥 Лимиты файлов
+
+| Тип | Лимит | Примечание |
+|-----|-------|------------|
+|  **Видео** | до `20 GB` | Обработка больших файлов занимает время |
+| 📎 **Файлы к посту** | до `40 Mb` | PNG, JPG, документы |
+
+---
+
+## 💡 Советы по обложке
+
+- **1920 × 240** — широкоформатная, как баннер
+- Важный текст — по центру, края могут обрезаться на мобильных
+- Не перегружайте мелкими деталями
+- Тёмная обложка + светлый текст = читаемость
+
+---
+
+## 📱 Аватар профиля
+
+- **225 × 280** — почти квадратный, чуть вытянутый
+- PNG с прозрачностью — если нужен «парящий» эффект
+- JPG — если картинка с фоном
+
+---
+
+## 📰 Тизер поста
+
+- **575 × 625** — почти квадрат
+- Это то, что видно в ленте до открытия поста
+- Делайте ярким — это первое что видит подписчик
+
+---
+
+*Опубликовано: 7 апреля 2026* | 🏷️ `#boosty` `#совет`</content>
+    <category term="boosty"/>
+    <category term="совет"/>
+    <author>
+      <name>@seraviellex</name>
+    </author>
+  </entry>
+  <entry>
+    <title>CipherNest — Telegram-бот для криптографии</title>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_ciphernest-crypto-bot.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_ciphernest-crypto-bot.md</id>
+    <updated>2026-04-07T00:00:00Z</updated>
+    <published>2026-04-07T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Self-hosted Telegram-бот с 25+ алгоритмами шифрования: AES, RSA, ChaCha20, Argon2id — всё в одном боте...&lt;/p&gt;
+
+# CipherNest — Telegram Crypto Bot 🔐
+
+Self-hosted Telegram-бот для криптографических операций и кодирования данных.
+
+## 🛠️ Стек
+
+- **Python** + **aiogram 3**
+- **cryptography**, **argon2-cffi**
+- **Docker** &amp; **Docker Compose**
+
+## ⚡ Возможности
+
+- **25+ алгоритмов**: AES-256-GCM, ChaCha20, RSA-2048, Ed25519, SHA-2/3, BLAKE2b, Argon2id, JWT decode, ZLIB и другие
+- **Chain Mode** — последовательное преобразование данных через цепочку алгоритмов
+- **Автоопределение формата** входных данных
+
+## 🔒 Приватность
+
+- Stateless обработка только в RAM
+- Нулевое логирование на диск
+- Rate limit: 10 запросов/мин
+
+## 🚀 Деплой
+
+```bash
+docker compose up -d
+```
+
+Optional: Redis для сессий. 44 юнит-теста, MIT License.
+
+🔗 [Репозиторий →](https://github.com/official-ids/CipherNest-Telegram-Crypto-Bot)
+
+---
+
+*Опубликовано: 7 апреля 2026*</content>
+    <category term="проект"/>
+    <category term="разработка"/>
+    <author>
+      <name>@seraviellex</name>
+    </author>
+  </entry>
+  <entry>
+    <title>Есть вопрос или предложение? Напиши нам!</title>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_helllofridge-bot-обратная-связь.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_helllofridge-bot-обратная-связь.md</id>
+    <updated>2026-04-07T00:00:00Z</updated>
+    <published>2026-04-07T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Теперь со мной можно связаться напрямую через Telegram-бота. Вопросы, предложения, идеи — пишите, всё дойдёт лично мне...&lt;/p&gt;
+
+# Есть вопрос или предложение? Напиши нам! 💬
+
+&gt; *Нашёл баг? Есть идея для поста? Хочешь предложить тему? Теперь не нужно искать контакты — пиши прямо в Telegram.*
+
+![Feedback](https://s10.iimage.su/s/07/th_gn4AJwVxLgSiKPQylWaK8hHrAqvWfTIoJqzLKFJd7.png)
+
+---
+
+## 🤝 Обратная связь — это важно
+
+Я веду этот блог и работаю над проектами. Мне важно знать что вы думаете:
+
+- 🐛 **Нашёл баг** — что-то не работает, ссылка битая, опечатка
+- 💡 **Есть идея** — тема для поста, фича для проекта, улучшение
+- ❓ **Вопрос** — что-то непонятно, хочешь уточнить
+- 🎉 **Фидбек** — нравится, не нравится, хочется больше/меньше
+
+---
+
+## 📱 Как написать?
+
+Всё просто — есть Telegram-бот:
+
+👉 **[@HellloFridge_bot](https://t.me/HellloFridge_bot)**
+
+1. Открываешь бота
+2. Жмёшь **Start**
+3. Пишешь что угодно
+4. **Мне приходит лично**
+5. Отвечаю вручную
+
+---
+
+## 🔒 Что будет с сообщением?
+
+| Что происходит | Описание |
+|----------------|----------|
+| 📨 **Доходит лично мне** | Никаких автоответов, читаю сам |
+| 💬 **Отвечаю вручную** | Не бот отвечает, а реальный человек |
+| 📝 **Ничего не теряется** | Все сообщения сохраняются |
+| 🔒 **Приватно** | Не публикую и не шарю без разрешения |
+
+---
+
+## 🎯 Что можно написать?
+
+```
+✅ "Крутой пост про GitHub, напиши про Docker!"
+✅ "В статье про CipherNest опечатка на 5 строке"
+✅ "Хочу увидеть туториал по деплою на fly.io"
+✅ "Сделай пост про настройку CI/CD"
+✅ "Привет, просто проверяю что бот работает 😄"
+```
+
+**Любой формат:** текст, фото, файл, голосовое — всё дойдёт.
+
+---
+
+## 💭 Почему не комментарии?
+
+GitHub Issues, комментарии, email — всё разбросано. А тут:
+
+```
+Одно место → Telegram → Лично мне → Быстрый ответ
+```
+
+Не нужно регистрироваться, оставлять email, ждать. Написал — получил ответ.
+
+---
+
+## 🚀 Попробуй прямо сейчас
+
+Не обязательно ждать проблемы. Напиши:
+
+- 🎯 Идею для следующего поста
+- 🐛 Баг который нашёл
+- 💬 Просто «привет»
+
+**[@HellloFridge_bot](https://t.me/HellloFridge_bot)** — жду!
+
+---
+
+*Опубликовано: 7 апреля 2026* | 🏷️ `#обратная-связь` `#telegram` `#блог`</content>
+    <category term="обновление"/>
+    <category term="идеи"/>
+    <author>
+      <name>@seraviellex</name>
+    </author>
+  </entry>
+  <entry>
+    <title>Что такое GitHub — полный гайд для новичков</title>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_что-такое-github.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_что-такое-github.md</id>
+    <updated>2026-04-07T00:00:00Z</updated>
+    <published>2026-04-07T00:00:00Z</published>
+    <content type="html">&lt;p&gt;Разбираю GitHub от А до Я: зачем нужен, как работает, почему без него никуда в 2026...&lt;/p&gt;
+
+# Что такое GitHub — полный гайд для новичков 🐙
+
+&gt; *Если ты когда-нибудь слышал «запушь на гитхаб» и не понимал — этот пост для тебя.*
+
+---
+
+## 🤔 Что вообще такое GitHub?
+
+**GitHub** — это платформа для хранения кода и совместной работы. Представь Google Docs, но для программистов.
+
+![GitHub Logo](https://s10.iimage.su/s/07/th_gOBCB75xmvsCJyTRUoy2JppTMIDBecXzRb69lUSAd.png)
+
+| Фича | Что делает |
+|------|------------|
+| 📦 **Репозитории** | Папки с проектами и историей всех изменений |
+| 🔀 **Ветки** | Параллельные версии кода (чтобы не сломать основное) |
+| 🔃 **Pull Requests** | Предложение изменений с обсуждением |
+| ⚡ **Actions** | Автоматизация: тесты, деплой, боты |
+| 📄 **Pages** | Бесплатный хостинг сайтов прямо из репо |
+
+---
+
+## 🔑 Основные понятия
+
+### Git vs GitHub
+
+```
+Git       = система контроля версий (программа на компе)
+GitHub    = сайт, где хранятся твои Git-репозитории
+```
+
+### Репозиторий
+
+Это твой проект со всей историей:
+
+```
+мой-проект/
+├── src/          ← исходный код
+├── README.md     ← главная страница
+└── .git/         ← магия Git тут
+```
+
+### Коммиты
+
+Каждый коммит — это «сейв» в игре:
+
+![GitHub Chart](https://ghchart.rshah.org/1b65c9/official-ids)
+
+---
+
+## 🚀 Как начать за 5 минут
+
+### Шаг 1: Регистрация
+
+🔗 [github.com](https://github.com) → Sign Up → бесплатно
+
+### Шаг 2: Первый репозиторий
+
+```
+New → Create Repository → Public → Create
+```
+
+### Шаг 3: Первый коммит
+
+```bash
+git clone https://github.com/ТВОЙ_НИК/мой-репо.git
+cd мой-репо
+echo "# Привет мир!" &gt; README.md
+git add .
+git commit -m "🎉 Первый коммит"
+git push
+```
+
+---
+
+## 💡 Зачем это НУЖНО?
+
+![Repos](https://img.shields.io/badge/Repos-10+-blue) ![Stars](https://img.shields.io/badge/Stars-100+-yellow) ![Contributions](https://img.shields.io/badge/Contributions-500+-green)
+
+1. **Портфолио** — работодатель смотрит на твой GitHub
+2. **Open Source** — тысячи бесплатных библиотек
+3. **Коллаборация** — работай с кем угодно, откуда угодно
+4. **Бэкап** — код в безопасности в облаке
+5. **CI/CD** — автоматические тесты и деплой
+
+---
+
+## 📚 Полезные ресурсы
+
+| Ресурс | Ссылка |
+|--------|--------|
+| 🎓 Git Tutorial | [git-scm.com/docs](https://git-scm.com/docs) |
+| 📖 GitHub Learning | [skills.github.com](https://skills.github.com) |
+| 🎥 Видео-гайд | [YouTube: Git для начинающих](https://www.youtube.com/watch?v=8JJ101D3knE) |
+| 📊 GitHub Stats | [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) |
+
+---
+
+## 🎯 Итог
+
+GitHub — это **must-have** скилл в 2026. Не важно, ты джун или сеньор — без гита никуда.
+
+&gt; *Лучший способ научиться — начать. Создай первый репо прямо сейчас.*
+
+```bash
+git init &amp;&amp; git commit &amp;&amp; git push  # Жизнь началась 🎉
+```
+
+---
+
+*Опубликовано: 7 апреля 2026* | 🏷️ `#github` `#git` `#для-новичков`</content>
+    <category term="разработка"/>
+    <category term="идеи"/>
+    <author>
+      <name>@seraviellex</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDs-blog</title>
+    <link rel="icon" href="https://s.fotora.ru/8c4d0413ab514d65.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a2e;--border:#2a2a3e;--txt:#f0f0f5;--txt2:#a0a0b8;--txt3:#6a6a82;--accent:#6c63ff;--accent2:#8b83ff;--green:#2dd4a8;--cyan:#22d3ee;--radius:12px;--r:8px;--max:860px}
+        html{scroll-behavior:smooth}
+        body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        body::before{content:'';position:fixed;top:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(108,99,255,.08),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:fO 20s ease-in-out infinite}
+        body::after{content:'';position:fixed;bottom:-20%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(45,212,168,.06),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:fO 25s ease-in-out infinite reverse}
+        @keyframes fO{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-20px,40px) scale(.95)}}
+        @keyframes fiu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fi{from{opacity:0}to{opacity:1}}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        @keyframes gp{0%,100%{box-shadow:0 0 20px rgba(108,99,255,.1)}50%{box-shadow:0 0 40px rgba(108,99,255,.2)}}
+        @keyframes ti{from{opacity:0;transform:translateY(-10px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+        @keyframes to{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(-10px) scale(.95)}}
+        @keyframes fir{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
+        a{color:var(--accent);text-decoration:none;transition:all .2s}a:hover{color:var(--accent2)}
+        .cnt{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .hdr{border-bottom:1px solid var(--border);padding:20px 0;margin-bottom:56px;background:rgba(10,10,15,.8);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100}
+        .hdr-in{display:flex;align-items:center;justify-content:space-between}
+        .logo{display:flex;align-items:center;gap:12px;color:var(--txt);font-weight:800;font-size:20px;letter-spacing:-.5px;cursor:pointer}.logo:hover{color:var(--accent2)}
+        .logo svg{transition:transform .3s}.logo:hover svg{transform:rotate(-5deg) scale(1.1)}
+        .nav{display:flex;gap:8px}.nav a{color:var(--txt3);font-size:14px;font-weight:500;padding:8px 16px;border-radius:20px;transition:all .2s;cursor:pointer}.nav a:hover{color:var(--txt);background:var(--bg3)}.nav a.on{color:var(--txt);background:var(--bg3)}
+        .hero{margin-bottom:56px;animation:fiu .6s ease}.hero h1{font-size:44px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,var(--txt),var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero p{font-size:18px;color:var(--txt2);max-width:580px;line-height:1.7}
+        .sb{display:flex;align-items:center;gap:24px;margin-bottom:48px;padding:20px 24px;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:var(--radius);animation:gp 4s ease-in-out infinite}.si{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--txt2)}.si svg{color:var(--accent)}.sv{color:var(--txt);font-weight:700;font-family:'JetBrains Mono',monospace;font-size:16px}
+        .ts{margin-bottom:48px;animation:fi .5s ease .2s both}.ts h2{font-size:13px;font-weight:600;color:var(--txt3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}.tl{display:flex;flex-wrap:wrap;gap:8px}
+        .tg{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;font-size:13px;font-weight:500;color:var(--txt2);transition:all .25s;cursor:pointer}.tg:hover{color:var(--txt);border-color:var(--accent);background:rgba(108,99,255,.15);transform:translateY(-2px);box-shadow:0 4px 12px rgba(108,99,255,.2)}.tc{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt3)}
+        .ps{margin-bottom:48px}.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}.ph h2{font-size:22px;font-weight:800;letter-spacing:-.3px}
+        .pc{padding:28px 0;border-bottom:1px solid var(--border);transition:all .3s;position:relative}.pc::before{content:'';position:absolute;left:-24px;top:0;bottom:0;width:3px;background:var(--accent);border-radius:2px;opacity:0;transition:opacity .3s}.pc:hover::before{opacity:1}.pc:last-child{border-bottom:none}
+        .pm{display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:13px;color:var(--txt3)}.pd{font-family:'JetBrains Mono',monospace}
+        .pt{font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.3;letter-spacing:-.3px}.pt a{color:var(--txt);transition:color .2s}.pt a:hover{color:var(--accent2)}
+        .pp{color:var(--txt2);font-size:15px;margin-bottom:14px;line-height:1.7}
+        .pts{display:flex;flex-wrap:wrap;gap:6px}.p-tag{padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(108,99,255,.12);color:var(--accent2);transition:all .2s}.p-tag:hover{background:rgba(108,99,255,.25);transform:scale(1.05)}
+        .pip{float:right;margin:0 0 12px 20px;width:140px;border-radius:var(--r);overflow:hidden;transition:transform .3s}.pip:hover{transform:scale(1.05)}.pip img{width:100%;height:auto;display:block}
+        .pag{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:40px}
+        .pag button{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);color:var(--txt);font-size:14px;font-weight:600;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif}.pag button:hover:not(:disabled){background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(108,99,255,.3)}.pag button:disabled{opacity:.3;cursor:not-allowed}
+        .pi{font-size:14px;color:var(--txt3);font-family:'JetBrains Mono',monospace;font-weight:500}
+        .cs{margin-top:72px;padding-top:56px;border-top:1px solid var(--border);animation:fi .5s ease .3s both}.cs h2{font-size:28px;font-weight:800;margin-bottom:8px;letter-spacing:-.5px}.csub{color:var(--txt2);margin-bottom:36px;font-size:16px}
+        .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+        .cc{display:flex;align-items:flex-start;gap:14px;padding:18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s}.cc:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px rgba(108,99,255,.15)}.cc svg{flex-shrink:0;margin-top:2px;color:var(--accent)}.cc-l{font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;font-weight:600}.cc-v{font-size:14px;color:var(--txt);word-break:break-all;font-weight:500}
+        .ftr{margin-top:72px;padding:32px 0;border-top:1px solid var(--border);text-align:center}.ft{font-size:13px;color:var(--txt3)}
+        .page{display:none}.page.on{display:block;animation:fiu .4s ease}
+        .ay{font-size:20px;font-weight:800;margin:36px 0 16px;color:var(--accent2);letter-spacing:-.3px}.ay:first-child{margin-top:0}
+        .ai{display:flex;align-items:baseline;gap:16px;padding:10px 0;border-bottom:1px solid var(--border);transition:all .2s}.ai:hover{padding-left:8px}.ai:last-child{border-bottom:none}.ad{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--txt3);white-space:nowrap;min-width:90px}.at{font-size:15px;color:var(--txt);font-weight:500}.at:hover{color:var(--accent2)}
+        .pf{max-width:var(--max);margin:0 auto;padding:0 24px}.pfh{margin-bottom:24px}.pfd{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--txt3);margin-bottom:12px}
+        .pft{font-size:36px;font-weight:900;line-height:1.15;margin-bottom:20px;letter-spacing:-1px;background:linear-gradient(135deg,var(--txt),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .pfts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+        .pab{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:32px;flex-wrap:wrap;gap:12px}
+        .pss{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.psl{font-size:13px;color:var(--txt3);font-weight:500;margin-right:4px}
+        .sb2{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--txt2);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}.sb2:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-1px)}.sb2 svg{width:16px;height:16px}
+        .sur{display:flex;align-items:center;gap:8px;width:100%;padding-top:12px;border-top:1px solid var(--border);margin-top:4px}
+        .sui{flex:1;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--txt2);font-size:12px;font-family:'JetBrains Mono',monospace;outline:none}.sui:focus{border-color:var(--accent)}
+        .cb{display:inline-flex;align-items:center;gap:4px;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--txt2);font-size:12px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;white-space:nowrap}.cb:hover{border-color:var(--accent);color:var(--accent2)}.cb.dn{background:var(--green);border-color:var(--green);color:var(--bg)}
+        .pmw{position:relative}
+        .mb{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--txt3);cursor:pointer;transition:all .2s}.mb:hover{border-color:var(--accent);color:var(--accent2)}
+        .mm{position:absolute;top:100%;right:0;margin-top:8px;min-width:200px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 32px rgba(0,0,0,.4);z-index:50;display:none;animation:fir .15s ease}.mm.sh{display:block}
+        .mi{display:flex;align-items:center;gap:10px;padding:10px 16px;color:var(--txt2);font-size:13px;cursor:pointer;transition:all .15s;border:none;background:none;width:100%;text-align:left;font-family:'Inter',sans-serif}.mi:hover{background:var(--bg3);color:var(--txt)}.mi svg{width:16px;height:16px;flex-shrink:0}
+        .pfc{line-height:1.85;font-size:16px}
+        .pfc h1{font-size:30px;margin:40px 0 20px;font-weight:800;letter-spacing:-.5px}
+        .pfc h2{font-size:24px;margin:32px 0 16px;font-weight:700}
+        .pfc h3{font-size:20px;margin:28px 0 12px;font-weight:600}
+        .pfc p{margin-bottom:18px;color:var(--txt2)}
+        .pfc a{color:var(--accent2);border-bottom:1px solid transparent}.pfc a:hover{border-bottom-color:var(--accent2)}
+        .pfc img{max-width:100%;border-radius:var(--radius);margin:20px 0;border:1px solid var(--border)}
+        .pfc blockquote{border-left:3px solid var(--accent);padding:16px 20px;margin:20px 0;color:var(--txt2);background:var(--bg2);border-radius:0 var(--r) var(--r) 0}
+        .pfc code{background:var(--bg3);padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:14px;color:#f472b6}
+        .pfc pre{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin:20px 0}.pfc pre code{background:none;padding:0;color:var(--txt)}
+        .pfc table{width:100%;border-collapse:collapse;margin:20px 0}.pfc th,.pfc td{border:1px solid var(--border);padding:10px 14px;text-align:left}.pfc th{background:var(--bg2);font-weight:600}
+        .pfc ul,.pfc ol{margin:16px 0;padding-left:24px}.pfc li{margin-bottom:6px;color:var(--txt2)}
+        .pfc hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+        .pfc strong{color:var(--txt);font-weight:600}
+        .ha{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-left:8px;border-radius:6px;color:var(--txt3);opacity:0;transition:all .2s;cursor:pointer;vertical-align:middle;border:1px solid transparent}.ha:hover{opacity:1;color:var(--accent2);background:var(--bg3);border-color:var(--border)}.ha svg{width:16px;height:16px}
+        .pfc h1:hover .ha,.pfc h2:hover .ha,.pfc h3:hover .ha{opacity:1}
+        .bl{display:inline-flex;align-items:center;gap:8px;color:var(--txt2);font-size:14px;font-weight:500;padding:8px 0;transition:all .2s;cursor:pointer}.bl:hover{color:var(--accent2);gap:12px}
+        .tc2{position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+        .toast{display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);color:var(--txt);font-size:14px;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,.4);pointer-events:auto;animation:ti .2s ease forwards}
+        .toast.hi{animation:to .2s ease forwards}.toast svg{color:var(--green);flex-shrink:0}
+        .ld{text-align:center;padding:64px 0;color:var(--txt3)}.ls{display:inline-block;width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--border)}
+        @media(max-width:640px){.hero h1{font-size:32px}.hero p{font-size:16px}.nav{gap:4px}.nav a{padding:6px 12px;font-size:13px}.sb{flex-wrap:wrap;gap:16px}.cg{grid-template-columns:1fr}.pip{float:none;margin:0 0 16px 0;width:100%}.pft{font-size:28px}.pc{padding:22px 0}.pab{flex-direction:column;align-items:flex-start}.sur{flex-wrap:wrap}}
+    </style>
+</head>
+<body>
+<div class="tc2" id="tc"></div>
+<header class="hdr"><div class="cnt hdr-in">
+    <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span>IDs-blog</span></a>
+    <nav class="nav"><a href="/" id="nH" class="on">Посты</a><a href="?archive" id="nA">Архив</a><a href="#contact" id="nC">Контакты</a></nav>
+</div></header>
+
+<main class="page on" id="pgH">
+    <section class="hero cnt"><h1>Личный блог о разработке<br>и технологиях</h1><p>Заметки, проекты и идеи о программировании, инструментах и tech.</p></section>
+    <div class="cnt"><div class="sb">
+        <div class="si"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Постов: <span class="sv" id="sP">0</span></div>
+        <div class="si"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Тегов: <span class="sv" id="sT">0</span></div>
+        <div class="si"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Обновлено: <span class="sv" id="sU">—</span></div>
+    </div></div>
+    <div class="cnt ts"><h2>Теги</h2><div class="tl" id="tL"></div></div>
+    <section class="cnt ps"><div class="ph"><h2>Последние посты</h2></div><div id="pC"><div class="ld"><div class="ls"></div><p style="margin-top:16px">Загрузка...</p></div></div><div class="pag" id="pG"></div></section>
+</main>
+
+<main class="page" id="pgA"><div class="cnt">
+    <h1 style="font-size:32px;font-weight:900;margin-bottom:8px;letter-spacing:-.5px">Архив постов</h1>
+    <p style="color:var(--txt2);margin-bottom:36px">Все посты блога</p>
+    <div id="aC"><div class="ld"><div class="ls"></div><p style="margin-top:16px">Загрузка...</p></div></div>
+</div></main>
+
+<main class="page" id="pgP"><div class="pf" id="pF"></div></main>
+
+<section class="cs cnt" id="secC" style="display:none">
+    <h2>Контакты</h2><p class="csub">Связаться можно любым удобным способом</p>
+    <div class="cg" id="cG"></div>
+</section>
+
+<footer class="ftr"><div class="cnt"><p class="ft">Powered by <a href="https://github.com/official-ids/ids-blog" target="_blank">GitHub</a> · Автор: <a href="https://t.me/seraviellex" target="_blank">@seraviellex</a></p></div></footer>
+
+<script>
+const PPP=5;let posts=[],curPage=1,activeTag=null,curSlug='';
+const TC={'обновление':'#0075ca','проект':'#2ea44f','разработка':'#6e40c9','музыка':'#e36209','идеи':'#bf3989','boosty':'#e8590c','совет':'#0d1117','roblox':'#e2231a'};
+marked.setOptions({breaks:true,gfm:true});
+
+function toast(m){var c=document.getElementById('tc'),t=document.createElement('div');t.className='toast';t.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>'+m;c.appendChild(t);setTimeout(function(){t.classList.add('hi');setTimeout(function(){t.remove();},200);},2000);}
+
+function fmtDate(d){return new Date(d).toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric'});}
+function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+function slug(t){return t.toLowerCase().replace(/[^\wа-яёА-ЯЁ\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');}
+
+// ========== ROUTING ==========
+// All navigation uses plain <a href> links - no SPA, no pushState
+// This means browser back/forward works natively, links always work
+
+function renderContacts(){
+    var g=document.getElementById('cG');
+    var contacts=[
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.073 1.751.336 2.025.36.377.735.602 1.115.795.426.217.852.433 1.258.669.534.31.968.571 1.417.839.266.159.517.308.773.456l1.426 4.493c.168.529.448.984.82 1.286a2.35 2.35 0 0 0 1.495.534c.588-.003 1.177-.212 1.716-.629l2.646-2.394 3.736 2.84c.38.289.79.493 1.226.61a2.447 2.447 0 0 0 1.893-.24c.558-.324.953-.846 1.138-1.465l3.242-17.07c.166-.874.024-1.778-.508-2.494a2.29 2.29 0 0 0-1.95-.936z"/></svg>',label:'Telegram',value:'@seraviellex',link:'https://t.me/seraviellex'},
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',label:'Телефон',value:'+7 (927) 735-07-42',link:'https://t.me/+79277350742'},
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',label:'Телефон 2',value:'+7 (927) 700-16-90',link:'tel:+79277001690'},
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.073 1.751.336 2.025.36.377.735.602 1.115.795.426.217.852.433 1.258.669.534.31.968.571 1.417.839.266.159.517.308.773.456l1.426 4.493c.168.529.448.984.82 1.286a2.35 2.35 0 0 0 1.495.534c.588-.003 1.177-.212 1.716-.629l2.646-2.394 3.736 2.84c.38.289.79.493 1.226.61a2.447 2.447 0 0 0 1.893-.24c.558-.324.953-.846 1.138-1.465l3.242-17.07c.166-.874.024-1.778-.508-2.494a2.29 2.29 0 0 0-1.95-.936z"/></svg>',label:'Проекты',value:'@seraviellexPROJECTS',link:'https://t.me/seraviellexPROJECTS'},
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>',label:'Бот',value:'@HelloFridge_bot',link:'https://t.me/HelloFridge_bot'},
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',label:'Yandex',value:'di44avolod@yandex.ru',link:'mailto:di44avolod@yandex.ru'},
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',label:'Gmail',value:'dimasik47k@gmail.com',link:'mailto:dimasik47k@gmail.com'},
+        {icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',label:'Outlook',value:'official-ids@hotmail.com',link:'mailto:official-ids@hotmail.com'}
+    ];
+    g.innerHTML=contacts.map(function(c){return '<a href="'+c.link+'" target="_blank" class="cc">'+c.icon+'<div><div class="cc-l">'+c.label+'</div><div class="cc-v">'+c.value+'</div></div></a>';}).join('');
+}
+
+function renderStats(t){
+    document.getElementById('sP').textContent=t;
+    var ts=new Set();posts.forEach(function(p){(p.tags||[]).forEach(function(t){ts.add(t);});});
+    document.getElementById('sT').textContent=ts.size;
+    var n=new Date();
+    document.getElementById('sU').textContent=n.toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric'})+' '+n.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
+}
+
+function renderTags(){
+    var c={};posts.forEach(function(p){(p.tags||[]).forEach(function(t){c[t]=(c[t]||0)+1;});});
+    var container=document.getElementById('tL');
+    var html='';
+    var sorted=Object.entries(c).sort(function(a,b){return b[1]-a[1];});
+    for(var i=0;i<sorted.length;i++){
+        var tag=sorted[i][0],count=sorted[i][1];
+        var cl=TC[tag]||'#6c757d';
+        html+='<span class="tg" style="border-color:'+cl+'50" onclick="filterTag(this,\''+tag.replace(/'/g,"\\'")+'\')">'+tag+'<span class="tc">'+count+'</span></span>';
+    }
+    container.innerHTML=html;
+}
+
+function filterTag(el,tag){
+    var wasActive=el.getAttribute('data-active')==='true';
+    // Reset all
+    var all=document.querySelectorAll('.tg');
+    for(var i=0;i<all.length;i++)all[i].setAttribute('data-active','false');
+    if(wasActive){
+        activeTag=null;curPage=1;renderPage(1);
+    }else{
+        el.setAttribute('data-active','true');
+        activeTag=tag;curPage=1;
+        var f=posts.filter(function(p){return (p.tags||[]).indexOf(activeTag)!==-1;});
+        renderList(f,'Посты: '+activeTag);renderPag(f.length,1);
+    }
+}
+
+function renderPage(p){curPage=p;var s=(p-1)*PPP;renderList(posts.slice(s,s+PPP),'Последние посты');renderPag(posts.length,p);}
+
+function renderList(ps,t){
+    var c=document.getElementById('pC');
+    document.querySelector('.ph h2').textContent=t;
+    if(!ps.length){c.innerHTML='<p style="text-align:center;color:var(--txt3);padding:48px 0">Не найдено</p>';return;}
+    var html='';
+    for(var i=0;i<ps.length;i++){
+        var p=ps[i];
+        var d=fmtDate(p.date);
+        var tags=(p.tags||[]).map(function(t){return '<span class="p-tag" style="background:'+(TC[t]||'#6c757d')+'18;color:'+(TC[t]||'#6c757d')+'">'+t+'</span>';}).join('');
+        var img='';if(p.body){var m=p.body.match(/!\[.*?\]\((.*?)\)/);if(m)img='<div class="pip"><img src="'+m[1]+'" loading="lazy"></div>';}
+        html+='<article class="pc">'+img+
+            '<div class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg><span class="pd">'+d+'</span></div>'+
+            '<h3 class="pt"><a href="?post='+encodeURIComponent(p.filename)+'">'+esc(p.title)+'</a></h3>'+
+            '<p class="pp">'+esc(p.preview)+'</p><div class="pts">'+tags+'</div></article>';
+    }
+    c.innerHTML=html;
+}
+
+function renderPag(total,cur){
+    var tp=Math.ceil(total/PPP),c=document.getElementById('pG');
+    if(tp<=1){c.innerHTML='';return;}
+    var prevDisabled=cur===1?'disabled':'';
+    var nextDisabled=cur===tp?'disabled':'';
+    c.innerHTML='<button onclick="renderPage('+(cur-1)+')" '+prevDisabled+'><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Назад</button>'+
+        '<span class="pi">'+cur+' / '+tp+'</span>'+
+        '<button onclick="renderPage('+(cur+1)+')" '+nextDisabled+'>Вперёд <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>';
+}
+
+function renderArchive(){
+    var c=document.getElementById('aC'),byY={};
+    for(var i=0;i<posts.length;i++){
+        var y=posts[i].date.substring(0,4);
+        if(!byY[y])byY[y]=[];
+        byY[y].push(posts[i]);
+    }
+    var h='';
+    var years=Object.keys(byY).sort().reverse();
+    for(var yi=0;yi<years.length;yi++){
+        var year=years[yi];
+        h+='<h3 class="ay">'+year+'</h3>';
+        for(var pi=0;pi<byY[year].length;pi++){
+            var p=byY[year][pi];
+            h+='<div class="ai"><span class="ad">'+fmtDate(p.date)+'</span><a href="?post='+encodeURIComponent(p.filename)+'" class="at">'+esc(p.title)+'</a></div>';
+        }
+    }
+    c.innerHTML=h;
+}
+
+function renderPost(fn){
+    var p=null;
+    for(var i=0;i<posts.length;i++){if(posts[i].filename===fn){p=posts[i];break;}}
+    var c=document.getElementById('pF');
+    if(!p){c.innerHTML='<div style="text-align:center;padding:64px 0"><p style="color:var(--txt3);margin-bottom:16px">Не найден</p><a href="/" class="bl">← На главную</a></div>';return;}
+    var body=p.body.replace(/\n---\n\*Опубликовано:.*$/s,'');
+    var url=location.origin+location.pathname+'?post='+encodeURIComponent(p.filename);
+    curSlug='?post='+encodeURIComponent(p.filename);
+    var d=fmtDate(p.date);
+    var tags=(p.tags||[]).map(function(t){return '<span class="p-tag" style="background:'+(TC[t]||'#6c757d')+'18;color:'+(TC[t]||'#6c757d')+'">'+t+'</span>';}).join('');
+
+    var share='<div class="pab"><div class="pss"><span class="psl">Поделиться:</span>'+
+        '<button class="sb2" onclick="shareTo(\'telegram\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.073 1.751.336 2.025.36.377.735.602 1.115.795.426.217.852.433 1.258.669.534.31.968.571 1.417.839.266.159.517.308.773.456l1.426 4.493c.168.529.448.984.82 1.286a2.35 2.35 0 0 0 1.495.534c.588-.003 1.177-.212 1.716-.629l2.646-2.394 3.736 2.84c.38.289.79.493 1.226.61a2.447 2.447 0 0 0 1.893-.24c.558-.324.953-.846 1.138-1.465l3.242-17.07c.166-.874.024-1.778-.508-2.494a2.29 2.29 0 0 0-1.95-.936z"/></svg>Telegram</button>'+
+        '<button class="sb2" onclick="shareTo(\'whatsapp\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>WhatsApp</button>'+
+        '<button class="sb2" onclick="shareTo(\'twitter\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16z"/><path d="M4 20l6.768-6.768m2.46-2.46l6.772-6.772"/></svg>X</button></div>'+
+        '<div class="pmw"><button class="mb" onclick="toggleMenu(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button>'+
+        '<div class="mm" id="mm" onclick="event.stopPropagation()"><button class="mi" onclick="copyLnk()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Копировать ссылку</button>'+
+        '<button class="mi" onclick="shareTo(\'email\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</button>'+
+        '<button class="mi" onclick="shareTo(\'vk\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8c1.5 0 2.5 1 2.5 2.5 0 1-.5 2-1.5 2.5-.3.2-.5.4-.5.7v.3c0 .3.2.5.5.5h1c1 0 2-1 2-2.5 0-2-2-4-4-4h-1c-.3 0-.5.2-.5.5v2c0 .3.2.5.5.5h1z"/><path d="M8 8c-1.5 0-2.5 1-2.5 2.5 0 1 .5 2 1.5 2.5.3.2.5.4.5.7v.3c0 .3-.2.5-.5.5H6c-1 0-2-1-2-2.5 0-2 2-4 4-4h1c.3 0 .5.2.5.5v2c0 .3-.2.5-.5.5H8z"/></svg>ВКонтакте</button></div></div>'+
+        '<div class="sur"><input type="text" class="sui" value="'+url+'" readonly onclick="this.select()" id="sui">'+
+        '<button class="cb" onclick="copyUrl()" id="cb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Копировать</button></div></div>';
+
+    var rendered=marked.parse(body);
+    c.innerHTML='<a href="/" class="bl">← Назад к постам</a>'+
+        '<header class="pfh"><div class="pfd">'+d+'</div><h1 class="pft">'+esc(p.title)+'</h1><div class="pfts">'+tags+'</div></header>'+
+        share+'<div class="pfc" id="pb">'+rendered+'</div>'+
+        '<hr style="border:none;border-top:1px solid var(--border);margin:48px 0">'+
+        '<a href="/" class="bl">← Назад к постам</a>';
+
+    // Add heading anchors
+    var headings=document.querySelectorAll('#pb h1,#pb h2,#pb h3');
+    for(var hi=0;hi<headings.length;hi++){
+        var h=headings[hi];
+        var id=slug(h.textContent.trim());
+        h.id=id;
+        h.innerHTML+=' <a class="ha" onclick="copyHd(event,\''+id+'\')" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>';
+    }
+}
+
+function toggleMenu(btn){
+    var menu=document.getElementById('mm');
+    menu.classList.toggle('sh');
+    event.stopPropagation();
+}
+
+function shareTo(pl){
+    var u=encodeURIComponent(location.origin+location.pathname+curSlug);
+    var titleEl=document.querySelector('.pft');
+    var t=encodeURIComponent(titleEl?titleEl.textContent:'IDs-blog');
+    var s='';
+    if(pl==='telegram')s='https://t.me/share/url?url='+u+'&text='+t;
+    else if(pl==='whatsapp')s='https://wa.me/?text='+t+'%20'+u;
+    else if(pl==='twitter')s='https://twitter.com/intent/tweet?url='+u+'&text='+t;
+    else if(pl==='vk')s='https://vk.com/share.php?url='+u+'&title='+t;
+    else if(pl==='email')s='mailto:?subject='+t+'&body='+t+'%20'+decodeURIComponent(u);
+    if(s)window.open(s,'_blank','noopener');
+    var m=document.getElementById('mm');if(m)m.classList.remove('sh');
+}
+function copyLnk(){navigator.clipboard.writeText(location.origin+location.pathname+curSlug).then(function(){toast('Скопировано');});var m=document.getElementById('mm');if(m)m.classList.remove('sh');}
+function copyUrl(){
+    var i=document.getElementById('sui');i.select();
+    navigator.clipboard.writeText(i.value).then(function(){
+        var b=document.getElementById('cb');b.classList.add('dn');b.innerHTML='✓ Скопировано!';toast('Скопировано');
+        setTimeout(function(){b.classList.remove('dn');b.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Копировать';},2000);
+    });
+}
+function copyHd(e,id){
+    e.preventDefault();
+    navigator.clipboard.writeText(location.origin+location.pathname+curSlug+'#'+id).then(function(){toast('Ссылка на заголовок скопирована');});
+}
+
+// ========== INIT ==========
+async function init(){
+    try{
+        var r=await fetch('posts_all.json');
+        if(!r.ok)throw new Error('Failed');
+        var d=await r.json();
+        posts=d.posts||[];
+        renderStats(d.total||0);
+        renderTags();
+        renderContacts();
+
+        // Route based on URL
+        var params=new URLSearchParams(window.location.search);
+        if(params.has('post')){
+            // Post page
+            document.getElementById('pgH').classList.remove('on');
+            document.getElementById('pgA').classList.remove('on');
+            document.getElementById('pgP').classList.add('on');
+            document.getElementById('secC').style.display='none';
+            document.getElementById('nH').classList.remove('on');
+            document.getElementById('nA').classList.remove('on');
+            renderPost(params.get('post'));
+        }else if(params.has('archive')){
+            // Archive page
+            document.getElementById('pgH').classList.remove('on');
+            document.getElementById('pgA').classList.add('on');
+            document.getElementById('pgP').classList.remove('on');
+            document.getElementById('secC').style.display='none';
+            document.getElementById('nH').classList.remove('on');
+            document.getElementById('nA').classList.add('on');
+            renderArchive();
+        }else{
+            // Home page
+            document.getElementById('pgH').classList.add('on');
+            document.getElementById('pgA').classList.remove('on');
+            document.getElementById('pgP').classList.remove('on');
+            document.getElementById('secC').style.display='none';
+            document.getElementById('nH').classList.add('on');
+            document.getElementById('nA').classList.remove('on');
+            renderPage(1);
+        }
+
+        // Handle contacts anchor
+        if(window.location.hash==='#contact'){
+            setTimeout(function(){
+                var sec=document.getElementById('secC');
+                sec.style.display='block';
+                sec.scrollIntoView({behavior:'smooth'});
+            },200);
+        }
+    }catch(e){
+        console.error(e);
+        document.getElementById('pC').innerHTML='<p style="text-align:center;color:var(--txt3);padding:48px 0">Ошибка загрузки. Обновите страницу.</p>';
+    }
+}
+
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
