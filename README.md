@@ -4,7 +4,7 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-08.04.2026%2012:36-blue) | ![Posts](https://img.shields.io/badge/Posts-5-green)
+![Updated](https://img.shields.io/badge/Updated-08.04.2026%2012:42-blue) | ![Posts](https://img.shields.io/badge/Posts-5-green)
 
 
 🎲 [Пост дня →](posts/2026-04-07_что-такое-github.md)
@@ -19,7 +19,7 @@
 
 ### 📌 08.04.2026 | Roblox — полный гайд для начинающих и не только
 
-<img src="https://s10.iimage.su/s/07/th_gTARxepxsiUnHYkzM2hh1cZUtK7fqM3DPRBAmfzTI.png" width="150" align="right" style="margin: 0 0 8px 12px; max-width: 100%; height: auto; border-radius: 8px;">
+<img src="https://s.fotora.ru/15cc8ba885b28146.png" width="150" align="right" style="margin: 0 0 8px 12px; max-width: 100%; height: auto; border-radius: 8px;">
 
 > Полный гайд по Roblox: от создания аккаунта до разработки собственных игр на Lua. Разбираю Roblox Studio, скриптинг, монетизацию и комьюнити...
 
