@@ -2,17 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>IDs-blog</title>
   <subtitle>Личный блог о разработке, и технологиях</subtitle>
-  <link href="https://github.com/your-username/VoiceBot" rel="alternate"/>
-  <link href="https://github.com/your-username/VoiceBot/atom.xml" rel="self"/>
-  <updated>2026-04-07T18:05:34Z</updated>
-  <id>https://github.com/your-username/VoiceBot</id>
+  <link href="https://github.com/official-ids/ids-blog" rel="alternate"/>
+  <link href="https://github.com/official-ids/ids-blog/atom.xml" rel="self"/>
+  <updated>2026-04-08T11:11:03Z</updated>
+  <id>https://github.com/official-ids/ids-blog</id>
   <author>
     <name>@seraviellex</name>
   </author>
   <entry>
     <title>Размеры обложки и файлов на Boosty — шпаргалка</title>
-    <link href="https://github.com/your-username/VoiceBot/posts/2026-04-07_boosty-размеры-шпаргалка.md" rel="alternate"/>
-    <id>https://github.com/your-username/VoiceBot/posts/2026-04-07_boosty-размеры-шпаргалка.md</id>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_boosty-размеры-шпаргалка.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_boosty-размеры-шпаргалка.md</id>
     <updated>2026-04-07T00:00:00Z</updated>
     <published>2026-04-07T00:00:00Z</published>
     <content type="html">&lt;p&gt;Размеры обложек, аватаров, тизеров и лимиты файлов на Boosty — чтобы всё выглядело ровно и ничего не обрезалось...&lt;/p&gt;
@@ -80,8 +80,8 @@
   </entry>
   <entry>
     <title>CipherNest — Telegram-бот для криптографии</title>
-    <link href="https://github.com/your-username/VoiceBot/posts/2026-04-07_ciphernest-crypto-bot.md" rel="alternate"/>
-    <id>https://github.com/your-username/VoiceBot/posts/2026-04-07_ciphernest-crypto-bot.md</id>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_ciphernest-crypto-bot.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_ciphernest-crypto-bot.md</id>
     <updated>2026-04-07T00:00:00Z</updated>
     <published>2026-04-07T00:00:00Z</published>
     <content type="html">&lt;p&gt;Self-hosted Telegram-бот с 25+ алгоритмами шифрования: AES, RSA, ChaCha20, Argon2id — всё в одном боте...&lt;/p&gt;
@@ -129,8 +129,8 @@ Optional: Redis для сессий. 44 юнит-теста, MIT License.
   </entry>
   <entry>
     <title>Есть вопрос или предложение? Напиши нам!</title>
-    <link href="https://github.com/your-username/VoiceBot/posts/2026-04-07_helllofridge-bot-обратная-связь.md" rel="alternate"/>
-    <id>https://github.com/your-username/VoiceBot/posts/2026-04-07_helllofridge-bot-обратная-связь.md</id>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_helllofridge-bot-обратная-связь.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_helllofridge-bot-обратная-связь.md</id>
     <updated>2026-04-07T00:00:00Z</updated>
     <published>2026-04-07T00:00:00Z</published>
     <content type="html">&lt;p&gt;Теперь со мной можно связаться напрямую через Telegram-бота. Вопросы, предложения, идеи — пишите, всё дойдёт лично мне...&lt;/p&gt;
@@ -226,8 +226,8 @@ GitHub Issues, комментарии, email — всё разбросано. А
   </entry>
   <entry>
     <title>Что такое GitHub — полный гайд для новичков</title>
-    <link href="https://github.com/your-username/VoiceBot/posts/2026-04-07_что-такое-github.md" rel="alternate"/>
-    <id>https://github.com/your-username/VoiceBot/posts/2026-04-07_что-такое-github.md</id>
+    <link href="https://github.com/official-ids/ids-blog/posts/2026-04-07_что-такое-github.md" rel="alternate"/>
+    <id>https://github.com/official-ids/ids-blog/posts/2026-04-07_что-такое-github.md</id>
     <updated>2026-04-07T00:00:00Z</updated>
     <published>2026-04-07T00:00:00Z</published>
     <content type="html">&lt;p&gt;Разбираю GitHub от А до Я: зачем нужен, как работает, почему без него никуда в 2026...&lt;/p&gt;

@@ -9,9 +9,11 @@ on:
       - 'scripts/**'
   workflow_dispatch:  # Ручной запуск
 
-# Права для коммита изменений
+# Права для коммита и деплоя Pages
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   update-feed:
@@ -67,6 +69,7 @@ jobs:
           echo "📊 Результат:"
           echo "- posts: $(ls -1 posts/*.md 2>/dev/null | wc -l)"
           echo "- feed.json: $(test -f feed.json && echo '✅' || echo '❌')"
+          echo "- posts_all.json: $(test -f posts_all.json && echo '✅' || echo '❌')"
           echo "- README.md: $(test -f README.md && echo '✅' || echo '❌')"
           echo "- atom.xml: $(test -f atom.xml && echo '✅' || echo '❌')"
 
@@ -75,7 +78,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-          git add feed.json README.md atom.xml
+          git add feed.json posts_all.json README.md atom.xml
 
           if git diff --staged --quiet; then
             echo "ℹ️  Нет изменений для коммита"
@@ -90,3 +93,30 @@ jobs:
         run: |
           echo "📋 Последние посты:"
           ls -lt posts/*.md 2>/dev/null | head -5 || echo "Посты не найдены"
+
+  deploy-pages:
+    needs: update-feed
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 📥 Checkout репозитория
+        uses: actions/checkout@v4
+
+      - name: 📁 Подготовка файлов для Pages
+        run: |
+          mkdir -p _site
+          # Копируем сайт
+          cp -r site/* _site/
+          # Копируем данные
+          cp feed.json posts_all.json atom.xml _site/
+          # Копируем посты (для чтения полных текстов)
+          cp -r posts _site/
+          echo "📄 Файлы для Pages:"
+          ls -la _site/
+
+      - name: ⬆️ Деплой на GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

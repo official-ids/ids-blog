@@ -181,6 +181,26 @@ def generate_feed_json(posts):
     return feed
 
 
+def generate_posts_all(posts):
+    """Генерирует posts_all.json — полный индекс постов для клиентской пагинации"""
+    all_posts = []
+    for post in posts:
+        all_posts.append({
+            "title": post['title'],
+            "date": post['date'].strftime('%Y-%m-%d') if isinstance(post['date'], datetime) else str(post['date']),
+            "tags": post.get('tags', []),
+            "preview": post['preview'],
+            "filename": post['filename'],
+            "filepath": post['filepath'],
+            "body": post.get('body', '')
+        })
+    return {
+        "generated": datetime.now().isoformat(),
+        "total": len(all_posts),
+        "posts": all_posts
+    }
+
+
 def get_tag_badge(tag, config):
     """Генерирует Markdown бейдж для тега с цветом из конфига"""
     tag_colors = config.get('theme', {}).get('tag_colors', {})
@@ -313,8 +333,8 @@ def generate_atom_xml(posts, config):
     description = blog_config.get('description', '')
     author = blog_config.get('author', 'Unknown')
 
-    # Базовый URL (GitHub Pages)
-    repo_url = os.environ.get('REPO_URL', 'https://github.com/your-username/VoiceBot')
+    # Базовый URL из конфига
+    repo_url = blog_config.get('repo_url', 'https://github.com/official-ids/ids-blog')
 
     # Atom namespace
     NS = 'http://www.w3.org/2005/Atom'
@@ -399,6 +419,14 @@ def main():
     with open(FEED_FILE, 'w', encoding='utf-8') as f:
         json.dump(feed_data, f, ensure_ascii=False, indent=2)
     logger.info(f"✅ Сохранён: {FEED_FILE}")
+
+    # Генерируем posts_all.json (для клиентской пагинации на сайте)
+    POSTS_ALL_FILE = ROOT_DIR / "posts_all.json"
+    logger.info("📄 Генерация posts_all.json...")
+    posts_all_data = generate_posts_all(posts)
+    with open(POSTS_ALL_FILE, 'w', encoding='utf-8') as f:
+        json.dump(posts_all_data, f, ensure_ascii=False, indent=2)
+    logger.info(f"✅ Сохранён: {POSTS_ALL_FILE}")
 
     # Генерируем README.md
     logger.info("📄 Генерация README.md...")

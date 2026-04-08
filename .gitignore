@@ -21,4 +21,7 @@ Thumbs.db
 *.log
 
 # Bot (exclude from repo)
-HellloFridge_bot/  
+HellloFridge_bot/
+
+# Site build artifacts
+_site/  

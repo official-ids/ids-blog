@@ -9,7 +9,9 @@
     "show_tags": true,
     "show_preview": true,
     "show_image_preview": true,
-    "date_format": "DD.MM.YYYY"
+    "date_format": "DD.MM.YYYY",
+    "repo_url": "https://github.com/official-ids/ids-blog",
+    "site_url": "https://official-ids.github.io/ids-blog"
   },
   "theme": {
     "primary_color": "#58a6ff",
@@ -29,5 +31,13 @@
     "last_updated_badge": true,
     "random_post_link": true,
     "post_count_badge": true
+  },
+  "contacts": {
+    "telegram_username": "seraviellex",
+    "telegram_phone": "+79277350742",
+    "phone": "+79277001690",
+    "telegram_projects": "seraviellexPROJECTS",
+    "emails": ["di44avolod@yandex.ru", "dimasik47k@gmail.com", "official-ids@hotmail.com"],
+    "telegram_bot": "HelloFridge_bot"
   }
 }

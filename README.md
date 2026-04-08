@@ -4,10 +4,10 @@
 
 ---
 
-![Updated](https://img.shields.io/badge/Updated-07.04.2026%2022:05-blue) | ![Posts](https://img.shields.io/badge/Posts-4-green)
+![Updated](https://img.shields.io/badge/Updated-08.04.2026%2015:11-blue) | ![Posts](https://img.shields.io/badge/Posts-4-green)
 
 
-🎲 [Пост дня →](posts/2026-04-07_helllofridge-bot-обратная-связь.md)
+🎲 [Пост дня →](posts/2026-04-07_ciphernest-crypto-bot.md)
 
 ### 🏷️ Облако тегов
 
