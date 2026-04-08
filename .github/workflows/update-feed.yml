@@ -105,18 +105,15 @@ jobs:
       - name: 📁 Подготовка файлов для Pages
         run: |
           mkdir -p _site
-          # Копируем сайт
           cp -r site/* _site/
-          # Копируем данные
           cp feed.json posts_all.json atom.xml _site/
-          # Копируем посты (для чтения полных текстов)
           cp -r posts _site/
           echo "📄 Файлы для Pages:"
           ls -la _site/
 
-      - name: ⬆️ Деплой на GitHub Pages (gh-pages branch)
-        uses: peaceiris/actions-gh-pages@v4
+      - name: ⬆️ Деплой на GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _site
-          publish_branch: gh-pages
+          folder: _site
+          branch: gh-pages
+          clean: true
