@@ -312,9 +312,15 @@ def generate_readme(posts, config):
         # Ссылка на полный текст
         posts_section += f"🔗 [Читать полностью →]({filepath})\n\n"
 
-        # Разделитель (не для последнего поста)
+        # Разделитель (не для последнего показанного поста)
         if i < min(len(posts), posts_limit) - 1:
             posts_section += "---\n\n"
+
+    # Пагинация: если постов больше чем лимит — ссылка на сайт
+    site_url = blog_config.get('site_url', '')
+    if len(posts) > posts_limit and site_url:
+        posts_section += f"\n---\n\n📄 **Показано {posts_limit} из {len(posts)} постов.** "
+        posts_section += f"[Смотреть все посты на сайте →]({site_url})\n\n"
 
     # Футер
     footer = f"""---
